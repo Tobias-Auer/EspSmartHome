@@ -1,0 +1,61 @@
+/about
+	{
+		type: leds / wled / ServerControl / MonitorControl,
+		(leds) features: {
+						dimEnabled: true / false,
+						rgbEnabled: true / false,
+						splitEnabled: true / false,
+						splitAmount: <n>
+					},
+		(wled) features: {
+					},
+		(ServerControl) features: {
+					},
+		(MonitorControl) features: {
+					},
+		uptime: <time>
+		
+	}
+	
+LEDS:
+	onOff:
+		/state/[n]/on
+		/state/[n]/off
+		/state/[n]/toggle
+		/state/[n]/<rbgValue>
+	dim:
+		/dim/[n]/<value>
+	status:
+		{
+			<n>: {
+				state: on / off,
+				brightness: <brightness> / null,
+				color: <rgbValue> / default
+			}
+		}
+		
+WLED:
+	default wled api
+
+
+ServerControl:
+	onOff:
+		/state/on
+		/state/off
+		/state/toggle
+	status:
+		{
+			state: on / off
+		}
+
+MonitorControl:
+	channel:
+		/channel/next
+		/channel/1
+		/channel/2
+		/channel/3
+	status:
+		{
+			channel: 1 / 2 / 3,
+			deviceConnected: 1 / 2 / 3
+		}
