@@ -1,19 +1,22 @@
 /about
 	{
 		type: leds / wled / ServerControl / MonitorControl,
+		name: <uniqueAndDescribingName>,
+		friendlyName: <name>,
 		(leds) features: {
 						dimEnabled: true / false,
 						rgbEnabled: true / false,
 						splitEnabled: true / false,
-						splitAmount: <n>
+						splitAmount: <n>,
+						connections: <n1,n2,n3,...>
+						
 					},
 		(wled) features: {
 					},
 		(ServerControl) features: {
 					},
 		(MonitorControl) features: {
-					},
-		uptime: <time>
+					}
 		
 	}
 	
@@ -45,7 +48,11 @@ ServerControl:
 		/state/toggle
 	status:
 		{
-			state: on / off
+			state: 1 / 0
+		}
+	statusSSE:
+		{
+			state: 1 / 0
 		}
 
 MonitorControl:
