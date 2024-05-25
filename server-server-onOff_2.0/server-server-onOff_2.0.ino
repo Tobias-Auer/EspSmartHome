@@ -6,6 +6,11 @@
 
 //                                      V A R I A B L E S
 
+Preferences preferences;
+String TYPE;
+String NAME;
+String FRIENDLY_NAME;
+String OPTIONS;
 
 bool statusLedWifi = 0;
 bool setupMode = false;
